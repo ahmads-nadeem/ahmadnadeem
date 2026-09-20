@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
 import { useInView } from '../hooks/useInView'
+import esthetics from '../assets/esthetics_project.webp'
 
 // Placeholder data — replace this with a real API call when your backend is ready.
 // Example: const res = await fetch('https://your-api.com/projects')
 const FALLBACK_PROJECTS = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce app with cart, payment integration, and admin dashboard. Built with React, Node.js, Express, and MongoDB.',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB'],
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&h=400&w=700',
-    liveUrl: '#',
+    title: 'Business Website',
+    description: 'Esthetics Solution which is one of the popular POS and ERP Company in Pakistan. I have manage there website with responsive design.',
+    tags: ['HTML', 'CSS', 'JAVASCRIPT'],
+    image: esthetics,
+    liveUrl: 'https://estheticsol.com',
     githubUrl: '#',
     featured: true,
   },
