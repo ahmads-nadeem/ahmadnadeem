@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ahmadnadeem119.vercel.app/sitemap.xml
