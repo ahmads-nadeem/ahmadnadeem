@@ -20,8 +20,8 @@ const contactInfo = [
       </svg>
     ),
     label: 'Discord',
-    value: 'yourhandle#0000',
-    href: '#',
+    value: 'asyouknowme1190',
+    href: 'https://discord.com/users/1567084160567349250',
   },
   {
     icon: (
