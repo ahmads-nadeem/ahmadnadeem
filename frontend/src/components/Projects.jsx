@@ -1,80 +1,80 @@
 import { useState, useEffect } from 'react'
 import { useInView } from '../hooks/useInView'
-import esthetics from '../assets/esthetics_project.webp'
-
+// import esthetics from '../assets/esthetics_project.webp'
+// import remini from '../assets/remini.webp'
+// import pos from '../assets/restuarent_pos.webp'
 // Placeholder data — replace this with a real API call when your backend is ready.
 // Example: const res = await fetch('https://your-api.com/projects')
 const FALLBACK_PROJECTS = [
   {
     id: 1,
-    title: 'Business Website',
-    description: 'Esthetics Solution which is one of the popular POS and ERP Company in Pakistan. I have manage there website with responsive design.',
-    tags: ['HTML', 'CSS', 'JAVASCRIPT'],
-    image: esthetics,
-    liveUrl: 'https://estheticsol.com',
-    githubUrl: '#',
+    title: 'Tool-Base – Web Utilities Platform',
+    description: 'A multi-tool web application featuring SEO audit utilities, image & video compression, PDF & resume generation, youtube video downloader and an AI chatbot assistant etc .',
+    tags: ['Next.js', 'Tailwind CSS', 'FastAPI', 'Docker'],
+    image: '/toolbasewebsite.webp',
+    liveUrl: 'https://toolbasewebsite.vercel.app',
+    githubUrl: 'https://github.com/ahmads-nadeem/Tool-Base',
     featured: true,
   },
   {
     id: 2,
-    title: 'Blog CMS',
-    description: 'Headless WordPress CMS with a custom Next.js frontend. Dynamic routing, SSR, and REST API integration.',
-    tags: ['Next.js', 'WordPress', 'REST API', 'Tailwind'],
-    image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&h=400&w=700',
-    liveUrl: '#',
-    githubUrl: '#',
+    title: 'Doctor Appointment & Booking System',
+    description: 'A modern healthcare booking web application built with Next.js, allowing patients to schedule doctor appointments online and view clinic schedules with a seamless user experience.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    image: '/doctor.webp',
+    liveUrl: 'https://drshaguftausman.vercel.app/',
+    githubUrl: 'https://github.com/asyouknowme-clients/Doctor-Frontend',
     featured: true,
   },
   {
     id: 3,
-    title: 'Task Management API',
-    description: 'RESTful API built with FastAPI and PostgreSQL. JWT auth, role-based access control, and full CRUD operations.',
-    tags: ['FastAPI', 'PostgreSQL', 'Python', 'JWT'],
-    image: 'https://images.pexels.com/photos/6424583/pexels-photo-6424583.jpeg?auto=compress&cs=tinysrgb&h=400&w=700',
-    liveUrl: '#',
+    title: 'Electrical Store & Services Platform',
+    description: 'An e-commerce platform to buy electrical items like LED lights and fans, and book professional electrician services online.',
+    tags: ['Next.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MySQL Database'],
+    image: '/electricstore.webp',
+    liveUrl: 'https://chohanelectricstore.vercel.app/',
     githubUrl: '#',
     featured: false,
   },
   {
     id: 4,
-    title: 'Real-time Chat App',
-    description: 'WebSocket-based chat application with rooms, online presence, and message history stored in MongoDB.',
-    tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
-    image: 'https://images.pexels.com/photos/1591062/pexels-photo-1591062.jpeg?auto=compress&cs=tinysrgb&h=400&w=700',
-    liveUrl: '#',
-    githubUrl: '#',
+    title: 'Salma Hospital Management System',
+    description: 'A hospital management platform for patient scheduling, medical checkups, doctor portals, and clinic billing workflows.',
+    tags: ['React', 'Tailwind CSS','Node.js', 'Express.js', 'MySQL Database'],
+    image: '/smh.webp',
+    liveUrl: 'https://smh-hospital.vercel.app/',
+    githubUrl: 'https://github.com/ahmads-nadeem/SMH-Hospital',
     featured: false,
   },
   {
     id: 5,
-    title: 'Portfolio Dashboard',
-    description: 'Analytics dashboard with charts, data tables, and REST API integration. Responsive layout with dark mode.',
-    tags: ['React', 'Tailwind', 'REST API', 'Charts'],
-    image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&h=400&w=700',
+    title: 'Technmark – Digital Marketing & Web Agency',
+    description: 'A global agency web platform for SEO, Google Ads, and custom development services, integrated with an AI chatbot assistant.',
+    tags: ['Next.js', 'Tailwind CSS', 'FastAPI','AI Chatbot'],
+    image: '/technmark.webp',
     liveUrl: '#',
     githubUrl: '#',
     featured: false,
   },
   {
     id: 6,
-    title: 'Restaurant Booking System',
-    description: 'Online reservation platform with table management, confirmation emails, and SQL database backend.',
-    tags: ['Next.js', 'Node.js', 'MySQL', 'Express'],
-    image: 'https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&h=400&w=700',
+    title: 'Remini MOD APK Landing Platform',
+    description: 'A targeted WordPress landing platform built for downloading modified APKs like Remini, optimized for fast downloads and high SEO search ranking.',
+    tags: ['WordPress', 'Elementor Page Builder'],
+    image: '/remini.webp',
     liveUrl: '#',
     githubUrl: '#',
     featured: false,
   },
 ]
 
-const allTags = ['All', 'React', 'Next.js', 'Node.js', 'FastAPI', 'MongoDB', 'MySQL', 'WordPress']
+const allTags = ['All', 'React', 'Next.js', 'Node.js', 'FastAPI', 'MySQL', 'WordPress']
 
 function ProjectCard({ project, index, inView }) {
   return (
     <div
-      className={`group bg-dark-700 border border-dark-500 rounded-2xl overflow-hidden hover:border-primary-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10 ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className={`group bg-dark-700 border border-dark-500 rounded-2xl overflow-hidden hover:border-primary-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-500/10 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="relative overflow-hidden h-48">
@@ -106,18 +106,33 @@ function ProjectCard({ project, index, inView }) {
         </div>
 
         <div className="flex gap-3">
-          <a
-            href={project.liveUrl}
-            className="flex-1 text-center text-sm py-2 bg-primary-500/10 border border-primary-500/30 text-primary-400 rounded-lg hover:bg-primary-500/20 transition-colors font-medium"
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.githubUrl}
-            className="flex-1 text-center text-sm py-2 bg-dark-600 border border-dark-400 text-gray-400 rounded-lg hover:text-white hover:border-gray-400 transition-colors font-medium"
-          >
-            GitHub
-          </a>
+          {
+            project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                className="flex-1 text-center text-sm py-2 bg-primary-500/10 border border-primary-500/30 text-primary-400 rounded-lg hover:bg-primary-500/20 transition-colors font-medium"
+              >
+                Live Demo
+              </a>
+            ) :
+              (
+                null
+              )
+          }
+          {
+            project.githubUrl ? (<a
+              href={project.githubUrl}
+              target='_blank'
+              className="flex-1 text-center text-sm py-2 bg-dark-600 border border-dark-400 text-gray-400 rounded-lg hover:text-white hover:border-gray-400 transition-colors font-medium"
+            >
+              GitHub
+            </a>) :
+              (
+                null
+              )
+          }
+
         </div>
       </div>
     </div>
@@ -169,11 +184,10 @@ export default function Projects() {
             <button
               key={tag}
               onClick={() => setActiveTag(tag)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                activeTag === tag
-                  ? 'bg-primary-500 text-white'
-                  : 'bg-dark-700 border border-dark-500 text-gray-400 hover:border-primary-500/40 hover:text-primary-400'
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${activeTag === tag
+                ? 'bg-primary-500 text-white'
+                : 'bg-dark-700 border border-dark-500 text-gray-400 hover:border-primary-500/40 hover:text-primary-400'
+                }`}
             >
               {tag}
             </button>

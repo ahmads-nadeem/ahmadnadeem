@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const roles = ['Full Stack Developer', 'React Developer', 'Node.js Engineer', 'API Architect']
+const roles = ['Full Stack Developer', 'React.js Developer', 'Next.js Developer', 'Node.js Developer', 'FastAPI Developer', 'API Architect']
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0)
